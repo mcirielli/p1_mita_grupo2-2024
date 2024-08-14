@@ -1,1 +1,3 @@
-print("Este es un nuevo archivo")
+def funcion(x):
+    print("Soy una funcion", x)
+print("------------")
