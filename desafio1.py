@@ -1,11 +1,7 @@
 import random
 
-estudiantes = [
-    "Estudiante1", "Estudiante2", "Estudiante3"
-    ]
-materias = [
-    "Materia1", "Materia2", "Materia3"
-    ]
+estudiantes = ["Estudiante1", "Estudiante2", "Estudiante3"]
+materias = ["Materia1", "Materia2", "Materia3"]
 
 e = len(estudiantes)
 m = len(materias)
@@ -15,15 +11,18 @@ for i in range(e):
     fila = [0] * m
     for j in range(m):
         fila[j] = random.randint(1, 10)
-    matriz += [fila]
+    matriz.append(fila)
 
 def mostrar_matriz(matriz, estudiantes, materias):
-    for i in range(m):
-        print(materias[i])
+    print("      ", end="")
+    for materia in materias:
+        print(f"{materia:>10}", end=" ")
+    print()
+
     for i in range(e):
-        print(estudiantes[i])
+        print(f"{estudiantes[i]:<10}", end=" ")
         for j in range(m):
-            print(matriz[i][j])
+            print(f"{matriz[i][j]:>10}", end=" ")
         print()
 
 def calc_prom(matriz):
@@ -32,52 +31,7 @@ def calc_prom(matriz):
         for j in range(m):
             suma += matriz[i][j]
         promedio = suma / m
-        print(estudiantes[i])
-        print("Promedio:")
-        print(promedio)
+        print(f"{estudiantes[i]} - Promedio: {promedio:.2f}")
 
 mostrar_matriz(matriz, estudiantes, materias)
 calc_prom(matriz)
-
-import random
-
-estudiantes = [
-    "Estudiante1", "Estudiante2", "Estudiante3"
-    ]
-materias = [
-    "Materia1", "Materia2", "Materia3"
-    ]
-
-e = len(estudiantes)
-m = len(materias)
-matriz = []
-
-for i in range(e):
-    fila = [0] * m
-    for j in range(m):
-        fila[j] = random.randint(1, 10)
-    matriz += [fila]
-
-def mostrar_matriz(matriz, estudiantes, materias):
-    for i in range(m):
-        print(materias[i])
-    for i in range(e):
-        print(estudiantes[i])
-        for j in range(m):
-            print(matriz[i][j])
-        print()
-
-def calc_prom(matriz):
-    for i in range(e):
-        suma = 0
-        for j in range(m):
-            suma += matriz[i][j]
-        promedio = suma / m
-        print(estudiantes[i])
-        print("Promedio:")
-        print(promedio)
-
-mostrar_matriz(matriz, estudiantes, materias)
-calc_prom(matriz)
-
-    
